@@ -2,6 +2,13 @@
 **Smart India Hackathon 2026 — Problem Statement SIH26044**  
 *Portal for Academia-Industry Collaboration for Skill Mapping, Internships and Placement*
 
+[![GitHub Repository](https://img.shields.io/badge/GitHub-skillnexus-blue?logo=github)](https://github.com/rinkeshdhote-afk/skillnexus)
+[![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi)](https://github.com/rinkeshdhote-afk/skillnexus/tree/main/backend)
+[![React](https://img.shields.io/badge/Frontend-React%2018%20%2B%20Vite-61DAFB?logo=react)](https://github.com/rinkeshdhote-afk/skillnexus)
+
+**Official Public GitHub Repository:**  
+👉 **[https://github.com/rinkeshdhote-afk/skillnexus](https://github.com/rinkeshdhote-afk/skillnexus)**
+
 ---
 
 ## 🌐 Live Service Links
@@ -107,3 +114,32 @@ Need a fresh database during evaluation?
     - Showcase the **Industry Skill Frequency Chart** (top skills demanded across companies).
     - Showcase the **College-wise Skill Gap Matrix** (IIT Bombay, BITS Pilani, VJTI).
     - Click **"Export Analytics CSV"** to download the live spreadsheet.
+
+---
+
+## ☁️ Deploy Live & Public to Cloud (100% Free)
+
+### Option A: 1-Click Render Blueprint (Backend + Both Frontends)
+1. Go to [dashboard.render.com/blueprints](https://dashboard.render.com/blueprints).
+2. Connect your GitHub repository: `https://github.com/rinkeshdhote-afk/skillnexus`.
+3. Render reads `render.yaml` and deploys:
+   - `skillnexus-backend`: FastAPI on a free web service (`https://skillnexus-backend.onrender.com`)
+   - `skillnexus-student`: Vite React on a static site (`https://skillnexus-student.onrender.com`)
+   - `skillnexus-pro`: Vite React on a static site (`https://skillnexus-pro.onrender.com`)
+
+### Option B: Deploy Frontends to Vercel
+1. Import repository on [vercel.com/new](https://vercel.com/new).
+2. Set root directory to `student-app` (for Student Portal) or `professional-app` (for Pro Portal).
+3. Add Environment Variable:
+   `VITE_API_URL` = `https://<your-deployed-backend-url>/api`
+4. Click **Deploy**!
+
+### Option C: Instant Public HTTPS Tunnel (Zero Setup)
+To instantly demo live over the internet to remote jury or mobile devices directly from your machine:
+```bash
+# Expose Student Portal
+npx localtunnel --port 5173
+
+# Expose Professional Portal
+npx localtunnel --port 5174
+```

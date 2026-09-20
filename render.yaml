@@ -1,0 +1,35 @@
+services:
+  # SKILLNEXUS Python FastAPI Backend
+  - type: web
+    name: skillnexus-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt && python seed.py
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+
+  # SKILLNEXUS Student Portal (Vite React)
+  - type: web
+    name: skillnexus-student
+    env: static
+    rootDir: student-app
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+  # SKILLNEXUS Professional & Academician Portal (Vite React)
+  - type: web
+    name: skillnexus-pro
+    env: static
+    rootDir: professional-app
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
